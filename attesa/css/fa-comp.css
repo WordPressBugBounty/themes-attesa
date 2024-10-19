@@ -1,0 +1,95 @@
+/*--------------------------------------------------------------
+## If FontAwesome 4 is active
+--------------------------------------------------------------*/
+body.with_fa4 blockquote::before,
+body.with_fa4 .main-navigation li a:not(:last-child):after,
+body.with_fa4 ul.attesa-categories-list li a:not(:last-child):after,
+body.with_fa4 aside ul.product-categories li a:before,
+body.with_fa4 aside ul.menu .indicatorBar,
+body.with_fa4 aside ul.product-categories .indicatorBar,
+body.with_fa4 .widget.widget_categories li:before,
+body.with_fa4 .widget.widget_archive li:before,
+body.with_fa4 .widget.widget_recent_comments li:before,
+body.with_fa4.attesa-blog-nogrid .sticky .entry-header .entry-title:before,
+body.with_fa4 .woocommerce-store-notice a.woocommerce-store-notice__dismiss-link:before,
+body.with_fa4.woocommerce div.product .woocommerce-product-gallery .woocommerce-product-gallery__trigger:before,
+body.with_fa4.woocommerce .woocommerce-error:before,
+body.with_fa4.woocommerce .woocommerce-info:before,
+body.with_fa4.woocommerce .woocommerce-message:before,
+body.with_fa4.woocommerce #respond input#submit.added:after,
+body.with_fa4.woocommerce a.button.added:after,
+body.with_fa4.woocommerce button.button.added:after,
+body.with_fa4.woocommerce input.button.added:after,
+body.with_fa4.woocommerce #respond input#submit.loading:after,
+body.with_fa4.woocommerce a.button.loading:after,
+body.with_fa4.woocommerce button.button.loading:after,
+body.with_fa4.woocommerce input.button.loading:after,
+body.with_fa4.woocommerce p.stars a.star-1:after,
+body.with_fa4.woocommerce p.stars a.star-2:after,
+body.with_fa4.woocommerce p.stars a.star-3:after,
+body.with_fa4.woocommerce p.stars a.star-4:after,
+body.with_fa4.woocommerce p.stars a.star-5:after,
+body.with_fa4 .star-rating,
+body.with_fa4.woocommerce-MyAccount-navigation ul li:before,
+body.with_fa4 ul.products li.product .tinvwl_add_to_wishlist_button:after,
+body.with_fa4.woocommerce ul.products li.product a.compare:before,
+body.with_fa4 .widget.widget_edd_cart_widget li.edd-cart-item:before,
+body.with_fa4 .widget.widget_edd_categories_tags_widget li:before,
+body.with_fa4 .main-navigation ul li .indicator:before,
+body.with_fa4 ul.attesa-categories-list li .indicator:before,
+body.with_fa4 aside ul.product-categories li a:before {
+	font-family: "FontAwesome";
+	font-weight: 400;
+}
+body.with_fa4 aside ul.product-categories li a:before {
+	content: "\f1db";
+}
+body.with_fa4 aside ul.product-categories li.current-cat a:before {
+	content: "\f111";
+}
+body.with_fa4.woocommerce p.stars a.star-1:after {
+    content: "\f006";
+    width: 13px;
+}
+body.with_fa4.woocommerce p.stars a.star-1:hover:after, body.with_fa4.woocommerce p.stars a.star-1.active:after {
+    content: "\f005";
+	font-weight: 400;
+}
+body.with_fa4.woocommerce p.stars a.star-2:after {
+    content: "\f006\f006";
+    width: 26px;
+}
+body.with_fa4.woocommerce p.stars a.star-2:hover:after, body.with_fa4.woocommerce p.stars a.star-2.active:after {
+    content: "\f005\f005";
+	font-weight: 400;
+}
+body.with_fa4.woocommerce p.stars a.star-3:after {
+    content: "\f006\f006\f006";
+    width: 39px;
+}
+body.with_fa4.woocommerce p.stars a.star-3:hover:after, body.with_fa4.woocommerce p.stars a.star-3.active:after {
+    content: "\f005\f005\f005";
+	font-weight: 400;
+}
+body.with_fa4.woocommerce p.stars a.star-4:after {
+    content: "\f006\f006\f006\f006";
+    width: 52px;
+}
+body.with_fa4.woocommerce p.stars a.star-4:hover:after, body.with_fa4.woocommerce p.stars a.star-4.active:after {
+    content: "\f005\f005\f005\f005";
+	font-weight: 400;
+}
+body.with_fa4.woocommerce p.stars a.star-5:after {
+    content: "\f006\f006\f006\f006\f006";
+    width: 65px;
+}
+body.with_fa4.woocommerce p.stars a.star-5:hover:after, body.with_fa4.woocommerce p.stars a.star-5.active:after {
+    content: "\f005\f005\f005\f005\f005";
+	font-weight: 400;
+}
+body.with_fa4 .star-rating {
+	width: 4.70em;
+}
+body.with_fa4 .star-rating span:before {
+	font-weight: 400;
+}

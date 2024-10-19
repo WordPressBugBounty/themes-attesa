@@ -1,0 +1,156 @@
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-content a {
+	word-wrap: break-word;
+}
+.bypostauthor {
+	display: block;
+}
+.bypostauthor > article {
+	padding: 1em;
+	margin-bottom: 2.5em;
+	position: relative;
+    overflow: hidden;
+}
+.bypostauthor > article::after {
+	content: "";
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    transform: rotate(45deg);
+}
+.comments-title {
+	letter-spacing: -1px;
+}
+#respond.comment-respond,
+#comments.comments-area {
+	outline: none;
+}
+#comments ol {
+	list-style-type: none;
+	padding: 0;
+	margin: 3em 0;
+}
+#comments ol .pingback,
+#comments ol article {
+	margin: 0 0 2.5em;
+	position: relative;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+}
+#comments ol .bypostauthor .pingback,
+#comments ol .bypostauthor > article {
+	border-bottom-width: 0px;
+	margin: 0;
+}
+#comments ol ol {
+	padding-left: 7%;
+}
+#comments article footer img {
+	float: left;
+	margin-right: 1em;
+	width: 60px;
+}
+#comments article .comment-content {
+	clear: both;
+	padding-bottom: .5em;
+}
+#comments article .comment-metadata {
+	font-size: 13px;
+}
+#comments .reply {
+	position: absolute;
+    top: 0;
+    right: 1.5em;
+    font-size: 13px;
+    border-style: solid;
+    border-width: 1px;
+	margin-top: 1em;
+}
+#comments .reply a {
+	padding: 0.3em 0.8em;
+}
+.comment-awaiting-moderation {
+	margin: 0;
+	color: red;
+	font-size: 13px;
+}
+.comments-area {
+	margin-top: 3em;
+	clear: both;
+}
+.comment-reply-title {
+	margin: 0;
+}
+.comment-reply-title small {
+	margin: 0 1em;
+}
+.comment-notes {
+	margin: 0;
+    font-size: 13px;
+	margin-bottom: 1.5em;
+}
+.comments-area .required {
+	color: red;
+}
+.comment-respond .comment-form-comment,
+.comment-respond .comment-form-author,
+.comment-respond .comment-form-email,
+.comment-respond .comment-form-url {
+	margin: 0;
+	margin-bottom: 1em;
+}
+.comment-respond .comment-form-author,
+.comment-respond .comment-form-email,
+.comment-respond .comment-form-url {
+	width: 33.33333333%;
+	float: left;
+}
+.comment-respond .comment-form-email {
+	padding: 0 1em;
+}
+.comment-respond .comment-form-author input,
+.comment-respond .comment-form-email input,
+.comment-respond .comment-form-url input {
+	width: 100%;
+}
+.comment-respond .form-submit {
+	clear: both;
+}
+.comment-respond .comment-form-cookies-consent input {
+	margin-right: 8px;
+}
+@media all and (max-width: 768px) {
+	.bypostauthor {
+		padding: 0.5em;
+	}
+}
+@media all and (max-width: 767px) {
+	.comment-respond .comment-form-author,
+	.comment-respond .comment-form-email,
+	.comment-respond .comment-form-url,
+	.comment-navigation .nav-previous,
+	.comment-navigation .nav-next {
+		width: 100%;
+	}
+	.comment-navigation .nav-next {
+		text-align: center;
+		padding: 10px 0;
+	}
+	.comment-respond .comment-form-email {
+		padding: 0;
+	}
+}
+@media all and (max-width: 600px) {
+	#comments .reply {
+		position: relative;
+		display: inline-block;
+		right: 0;
+		left: 0;
+		margin-bottom: 1.5em;
+		margin-top: 0;
+	}
+}

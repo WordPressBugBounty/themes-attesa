@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Attesa\n"
-"POT-Creation-Date: 2024-11-13 09:06+0100\n"
-"PO-Revision-Date: 2024-11-13 09:06+0100\n"
+"POT-Creation-Date: 2024-12-17 17:31+0100\n"
+"PO-Revision-Date: 2024-12-17 17:32+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -2454,18 +2454,18 @@ msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
 #. translators: %s is the product name
-#: woocommerce/cart/mini-cart.php:69
+#: woocommerce/cart/mini-cart.php:70
 #, php-format
 msgid "Remove %s from cart"
 msgstr ""
 
 #. translators: %s is the product name
-#: woocommerce/cart/mini-cart.php:74
+#: woocommerce/cart/mini-cart.php:75
 #, php-format
 msgid "&ldquo;%s&rdquo; has been removed from your cart"
 msgstr ""
 
-#: woocommerce/cart/mini-cart.php:107
+#: woocommerce/cart/mini-cart.php:108
 msgid "No products in the cart."
 msgstr ""
 

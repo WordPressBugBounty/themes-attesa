@@ -1,73 +1,85 @@
 (function ($) {
 	'use strict';
-	$(window).on('load', function () {
+	var $window = $(window);
+    var $document = $(document);
+    var $body = $('body');
+
+	$window.on('load', function () {
 		/* ----------------------------------------------------------------------------------- */
 		/* Sticky woocommerce bar */
 		/* ----------------------------------------------------------------------------------- */
-		if ($('.attesa-woocommerce-sticky-product').length) {
-			$(window).scroll(function () {
-				var d = $('form.cart').offset().top - $('header.site-header').outerHeight(),
-					z = $('form.cart').height(),
-					y = $('.footer-bottom-area').offset().top,
-					wS = $(window).scrollTop(),
-					wH = $(window).height();
-				if ( wS >= d + z && wS < (y-wH) ) {
-					$('.attesa-woocommerce-sticky-product').addClass('open');
-				} else {
-					$('.attesa-woocommerce-sticky-product').removeClass('open');
-				}
+		var $stickyProduct = $('.attesa-woocommerce-sticky-product');
+		if ($stickyProduct.length) {
+			var $header = $('header.site-header');
+            var $form = $('form.cart');
+            var $footerArea = $('.footer-bottom-area');
+            
+            var formHeight = $form.height();
+            var headerHeight = $header.outerHeight();
+
+			$window.scroll(function () {
+				var windowScrollTop = $window.scrollTop();
+                var windowHeight = $window.height();
+                var formOffset = $form.offset().top - headerHeight;
+                var footerOffset = $footerArea.offset().top;
+                
+                if (windowScrollTop >= formOffset + formHeight && 
+                    windowScrollTop < (footerOffset - windowHeight)) {
+                    $stickyProduct.addClass('open');
+                } else {
+                    $stickyProduct.removeClass('open');
+                }
 			});
-			$('.attesa-woocommerce-sticky-product .attesa-sticky-button').click(function(){
-				$('html,body').animate({ scrollTop: $('.woocommerce div.product').offset().top - $('header.site-header').outerHeight() - 30 }, 500);
+			$stickyProduct.find('.attesa-sticky-button').click(function() {
+				var scrollTarget = $('.woocommerce div.product').offset().top - headerHeight - 30;
+				$('html,body').animate({ scrollTop: scrollTarget }, 500);
 				return false;
 			});
 		}
 	});
-	$(document).ready(function() {
-		if ($('body').hasClass('attesa-ajax-add-to-cart')) {
+	$document.ready(function() {
+		if ($body.hasClass('attesa-ajax-add-to-cart')) {
 			$('.single_add_to_cart_button').on('click', function(e) {
-				if ($(this).hasClass('disabled')) {
-					return;
-				}
+				var $thisbutton = $(this);
+                if ($thisbutton.hasClass('disabled')) {
+                    return;
+                }
 			    e.preventDefault();
-			    var $thisbutton = $(this),
-	                $form = $thisbutton.closest('form.cart'),
-	                id = $thisbutton.val(),
-	                product_qty = $form.find('input[name=quantity]').val() || 1,
-	                product_id = $form.find('input[name=product_id]').val() || id,
-	                variation_id = $form.find('input[name=variation_id]').val() || 0;
+			    var $form = $thisbutton.closest('form.cart');
+                var id = $thisbutton.val();
+                var product_qty = $form.find('input[name=quantity]').val() || 1;
+                var product_id = $form.find('input[name=product_id]').val() || id;
+                var variation_id = $form.find('input[name=variation_id]').val() || 0;
 			    var data = {
-			            action: 'attesa_woocommerce_ajax_add_to_cart',
-			            security: attesaWooSettings.nonce,
-			            product_id: product_id,
-			            product_sku: '',
-			            quantity: product_qty,
-			            variation_id: variation_id,
-			        };
+                    action: 'attesa_woocommerce_ajax_add_to_cart',
+                    security: attesaWooSettings.nonce,
+                    product_id: product_id,
+                    product_sku: '',
+                    quantity: product_qty,
+                    variation_id: variation_id
+                };
 			    $.ajax({
 		            type: 'post',
 		            url: wc_add_to_cart_params.ajax_url,
 		            data: data,
-		            beforeSend: function (response) {
-		                $thisbutton.removeClass('added').addClass('loading');
-		            },
+		            beforeSend: function () {
+                        $thisbutton.removeClass('added').addClass('loading');
+                    },
 		            complete: function (response) {
-		            	if (response.responseJSON.error === true) {
-		            		$thisbutton.text(attesaWooSettings.error);
-		            		$thisbutton.addClass('error').removeClass('loading');
-		            	} else {
-		            		$thisbutton.text(attesaWooSettings.added_to_cart);
-		            		$thisbutton.addClass('added').removeClass('loading');
-		            	}
-		            }, 
+                        if (response.responseJSON && response.responseJSON.error === true) {
+                            $thisbutton.text(attesaWooSettings.error).addClass('error').removeClass('loading');
+                        } else {
+                            $thisbutton.text(attesaWooSettings.added_to_cart).addClass('added').removeClass('loading');
+                        }
+                    },
 		            success: function (response) {
-		                if (response.error && response.product_url) {
-		                    window.location = response.product_url;
-		                    return;
-		                } else { 
-		                    $(document.body).trigger('added_to_cart', [response.fragments, response.cart_hash, $thisbutton]);
-		                } 
-		            }, 
+                        if (response.error && response.product_url) {
+                            window.location = response.product_url;
+                            return;
+                        }
+                        
+                        $(document.body).trigger('added_to_cart', [response.fragments, response.cart_hash, $thisbutton]);
+                    }
 			    }); 
 		    }); 
 		}

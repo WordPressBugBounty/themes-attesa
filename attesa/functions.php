@@ -291,7 +291,7 @@ function attesa_scripts() {
 	}
 	wp_enqueue_script( 'attesa-custom', get_template_directory_uri() . '/js/jquery.attesa'.$min.'.js', array('jquery'), wp_get_theme()->get('Version'), true );
 	if ( attesa_options('_smooth_scroll', '') == 1) {
-		wp_enqueue_script( 'attesa-smooth-scroll', get_template_directory_uri() . '/js/SmoothScroll'.$min.'.js', array('jquery'), '1.4.10', true );
+		wp_enqueue_script( 'attesa-smooth-scroll', get_template_directory_uri() . '/js/SmoothScroll'.$min.'.js', array('jquery'), '1.4.9', true );
 	}
 	if ( is_singular() && get_option( 'thread_comments' ) ) {
 		if (comments_open()) {

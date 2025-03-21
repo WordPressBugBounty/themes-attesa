@@ -37,7 +37,8 @@ body.with_fa4 .widget.widget_edd_cart_widget li.edd-cart-item:before,
 body.with_fa4 .widget.widget_edd_categories_tags_widget li:before,
 body.with_fa4 .main-navigation ul li .indicator:before,
 body.with_fa4 ul.attesa-categories-list li .indicator:before,
-body.with_fa4 aside ul.product-categories li a:before {
+body.with_fa4 aside ul.product-categories li a:before,
+.woocommerce form .show-password-input::after, .woocommerce-page form .show-password-input::after {
 	font-family: "FontAwesome";
 	font-weight: 400;
 }

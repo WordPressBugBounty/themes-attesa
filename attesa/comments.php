@@ -83,7 +83,7 @@ if ( post_password_required() ) {
 		/* translators: %s: wordpress login url */
 		'must_log_in' => '<p class="must-log-in">' .  sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' , 'attesa' ), wp_login_url( apply_filters( 'attesa_login_the_permalink', esc_url( get_permalink( ) ) ) ) ) . '</p>',
 		/* translators: 1: profile user link, 2: username, 3: logout link */
-		'logged_in_as' => '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>'  , 'attesa' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'attesa_logout_the_permalink', esc_url( get_permalink( ) ) ) ) ) . '</p>',
+		'logged_in_as' => '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>'  , 'attesa' ), esc_url(admin_url( 'profile.php' )), esc_html($user_identity), wp_logout_url( apply_filters( 'attesa_logout_the_permalink', esc_url( get_permalink( ) ) ) ) ) . '</p>',
 		'comment_notes_before' => '<p class="comment-notes">' . esc_html__( 'Your email address will not be published.'  , 'attesa' ) . ( $attesa_req ? $attesa_required_text : '' ) . '</p>',
 		'title_reply' => esc_html__( 'Leave a Reply'  , 'attesa' ),
 		/* translators: %s: name of person to reply */

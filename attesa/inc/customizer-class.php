@@ -53,7 +53,7 @@ if( class_exists( 'WP_Customize_Control' ) ):
 						}
 						?>
 					</ul>
-					<input type="hidden" value="<?php $this->value(); ?>" <?php $this->link(); ?> />
+					<input type="hidden" value="<?php echo $this->value(); ?>" <?php $this->link(); ?> />
 				</label>
 			<?php
 		}

@@ -1479,6 +1479,10 @@ button[name=update_cart]:disabled,
     vertical-align: middle;
     display: inline-block;
 }
+#payment .payment_methods li label img {
+	max-width: 90px;
+    float: right;
+}
 @media screen and (min-width: 1026px) {
 	.cartwoo-button-mobile {
 		display: none;

@@ -72,7 +72,7 @@ class Attesa_Notice {
 			<?php esc_html_e('Welcome! Thank you for choosing Attesa theme! To fully take advantage of the best our theme can offer please make sure you have installed the "Attesa Extra" plugin', 'attesa'); ?>
 			</p>
 			<p class="submit">
-				<a class="button-primary" href="<?php echo esc_url_raw( admin_url( 'plugin-install.php?s=attesa+extra&tab=search&type=term' ) ); ?>"><?php esc_html_e( 'Install Attesa Extra Plugin', 'attesa' ); ?></a>
+				<a class="button-primary" href="<?php echo esc_url( admin_url( 'plugin-install.php?s=attesa+extra&tab=search&type=term' ) ); ?>"><?php esc_html_e( 'Install Attesa Extra Plugin', 'attesa' ); ?></a>
 			</p>
 		</div>
 		<?php

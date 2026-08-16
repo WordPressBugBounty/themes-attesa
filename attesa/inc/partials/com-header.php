@@ -38,11 +38,11 @@ function attesa_get_top_bar() {
 						$emailAddressLink = attesa_options('_email_address_link', ''); ?>
 						<?php if($emailAddressLink) : ?>
 							<span class="top-email">
-								<i class="<?php attesa_fontawesome_icons('general_prefix'); ?> fa-envelope spaceRight" aria-hidden="true"></i><span class="attesa-email"><a href="mailto:<?php echo esc_html(antispambot($emailAddress)); ?>"><?php echo esc_html(antispambot($emailAddress)); ?></a></span>
+								<i class="<?php attesa_fontawesome_icons('general_prefix'); ?> fa-envelope spaceRight" aria-hidden="true"></i><span class="attesa-email"><a href="mailto:<?php echo antispambot($emailAddress); ?>"><?php echo antispambot($emailAddress); ?></a></span>
 							</span>
 						<?php else: ?>
 							<span class="top-email">
-								<i class="<?php attesa_fontawesome_icons('general_prefix'); ?> fa-envelope spaceRight" aria-hidden="true"></i><span class="attesa-email"><?php echo esc_html(antispambot($emailAddress)); ?></span>
+								<i class="<?php attesa_fontawesome_icons('general_prefix'); ?> fa-envelope spaceRight" aria-hidden="true"></i><span class="attesa-email"><?php echo antispambot($emailAddress); ?></span>
 							</span>
 						<?php endif; ?>
 					<?php endif; ?>
@@ -75,7 +75,7 @@ function attesa_get_top_bar() {
 					<!-- End: Search Icon and Form -->
 					<?php endif; ?>
 					<?php
-					if ($showWooCartButton && function_exists( 'is_woocommerce' )) : ?>
+					if ( $showWooCartButton && function_exists( 'is_woocommerce' ) && ! is_null( WC()->cart ) ) : ?>
 					<div class="cartwoo-button">
 						<a class="woo-cart" href="<?php echo esc_url(wc_get_cart_url()); ?>">
 							<div class="cart-handle">
@@ -108,7 +108,7 @@ function attesa_get_top_bar() {
 					<?php endif; ?>
 					<?php if ($showTopBarMenu) : ?>
 					<nav id="top-navigation" class="third-navigation" <?php attesa_schema_markup('site-navigation'); ?>>
-						<button class="menu-toggle-top"><i class="<?php attesa_fontawesome_icons('general_prefix'); ?> fa-lg fa-bars" aria-hidden="true"></i></button>
+						<button class="menu-toggle-top"><i class="<?php attesa_fontawesome_icons('general_prefix'); ?> fa-lg fa-bars" aria-expanded="false" aria-label="<?php esc_attr_e( 'Menu', 'attesa' ); ?>"></i></button>
 						<?php wp_nav_menu( array( 'theme_location' => 'top', 'menu_id' => 'top-menu', 'depth' => 1, 'fallback_cb' => false ) ); ?>
 					</nav>
 					<?php endif; ?>
@@ -177,7 +177,7 @@ function attesa_get_header() {
 				<div class="mainFunc">
 					<div class="subFunc">
 						<?php
-						if ($showWooCartButton && function_exists( 'is_woocommerce') && $showTopBar && !class_exists( 'Attesa_pro' ) ) : ?>
+						if ($showWooCartButton && function_exists( 'is_woocommerce') && ! is_null( WC()->cart ) && $showTopBar && !class_exists( 'Attesa_pro' ) ) : ?>
 						<div class="cartwoo-button-mobile">
 							<a class="woo-cart" href="<?php echo esc_url(wc_get_cart_url()); ?>">
 								<div class="cart-handle">
@@ -319,7 +319,7 @@ function attesa_get_header() {
 				<div class="mainFunc">
 					<div class="subFunc">
 						<?php
-						if ($showWooCartButton && function_exists( 'is_woocommerce') && $showTopBar && !class_exists( 'Attesa_pro' ) ) : ?>
+						if ($showWooCartButton && function_exists( 'is_woocommerce') && ! is_null( WC()->cart ) && $showTopBar && !class_exists( 'Attesa_pro' ) ) : ?>
 						<div class="cartwoo-button-mobile">
 							<a class="woo-cart" href="<?php echo esc_url(wc_get_cart_url()); ?>">
 								<div class="cart-handle">
@@ -442,7 +442,7 @@ function attesa_get_header() {
 				<div class="mainFunc">
 					<div class="subFunc">
 						<?php
-						if ($showWooCartButton && function_exists( 'is_woocommerce') && $showTopBar && !class_exists( 'Attesa_pro' ) ) : ?>
+						if ($showWooCartButton && function_exists( 'is_woocommerce') && ! is_null( WC()->cart ) && $showTopBar && !class_exists( 'Attesa_pro' ) ) : ?>
 						<div class="cartwoo-button-mobile">
 							<a class="woo-cart" href="<?php echo esc_url(wc_get_cart_url()); ?>">
 								<div class="cart-handle">

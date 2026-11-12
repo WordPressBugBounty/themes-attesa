@@ -76,7 +76,7 @@ msgstr ""
 msgid "Required fields are marked "
 msgstr ""
 
-#. translators: %s: wordpress login url
+#. translators: %s: WordPress login url
 #: comments.php:84
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."

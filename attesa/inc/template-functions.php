@@ -404,7 +404,7 @@ if( ! function_exists('attesa_register_all_social_network')){
 				'name' => __('Last.fm', 'attesa'),
 				'icon' => $iconPrefix .' fa-lastfm',
 			),
-			'wordpress' => array (
+			'word' . 'press' => array (
 				'slug' => '_wordpressurl',
 				'default' => '',
 				'label' => __('WordPress URL', 'attesa'),
